@@ -8,41 +8,53 @@
 package cse360assign2;
 
 public class AddingMachine {
-private int total;
 	/**
-	 * initialize total
+	 * initialize total and history of transactions 
+	 * @param total   integer of total number 
+	 * @param history string history of transactions
 	 */
+	private int total;
+	private String history = "0";
+	
 	public AddingMachine () {
 		total = 0;  // not needed - included for clarity
 	}
 	/**
-	 * 
-	 * @return return the total value
+	 * this method return the calculated total number 
+	 * @return return the total integer
 	 */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 	/**
-	 * this method add the machine to total value 
+	 * this method add the value to total 
+	 * and record the transactions in history
+	 * @param value the integer value input
 	 */
 	public void add (int value) {
-		
+		total = total + value;
+		history = history +" + "+ Integer.toString(value);
 	}
 	/**
-	 * this method subtract the machine to total value 
+	 * this method subtract the value to total 
+	 * and record the transactions in history
+	 * @param value the integer value input
 	 */
 	public void subtract (int value) {
-		
+		total = total - value;
+		history = history +" - "+ Integer.toString(value);
 	}
 	/**
-	 * 	(non-Javadoc)
-	 * @see java.lang.Object#toString()
+	 * 	this method return the string of transactions
+	 * @return return the history string
 	 */
 	public String toString () {
-		return "";
+		return history;
 	}
 	
 	public void clear() {
 	
 	}
 }
+
+
